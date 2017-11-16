@@ -2,7 +2,7 @@
 Tick Tack toe game on Blockchain Smart contracts
 
 Tasks:
-1. Simple game contract with tests:
+1. ✅ Simple game contract with tests:
   - owner creates game with desired bet;
   - guest palyer accespts game with bet sent in transaction;
   - after finishing game prize is payed.
@@ -12,3 +12,4 @@ Tasks:
   - owner is set;
   - guest player can accept game;
   - game history saves in manager contract (players, bet, result)
+4. UI for Game manager contract.
