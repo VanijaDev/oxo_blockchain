@@ -13,3 +13,4 @@ Tasks:
   - guest player can accept game;
   - game history saves in manager contract (players, bet, result)
 4. UI for Game manager contract.
+5. JSON test
