@@ -1,0 +1,31 @@
+{
+  "name": "ethse",
+  "version": "0.0.1",
+  "description": "Truffle project for OXO game",
+  "scripts": {
+    "test": "truffle test",
+    "compile": "truffle compile",
+    "truffle": "truffle",
+    "testrpc": "testrpc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VanijaDev/oxo_blockchain/tree/develop"
+  },
+  "keywords": [
+    "ethereum",
+    "solidity",
+    "truffle"
+  ],
+  "author": "Ivan Solomichev <ivan.solomichev@gmail.com>",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/VanijaDev/oxo_blockchain/tree/develop/issues"
+  },
+  "homepage": "https://github.com/VanijaDev/oxo_blockchain/#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "ethereumjs-testrpc": "5.0.1",
+    "truffle": "4.0.1"
+  }
+}
