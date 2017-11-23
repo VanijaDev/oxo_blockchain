@@ -89,6 +89,12 @@ contract OXOGame {
     LogGameCreated("GameContract address: ", this, "Bet price: ", msg.value);
   }
 
+  function updateBetPrice(uint _newBet) public
+    onlyOwner returns (bool success) {
+      betPrice = _newBet;
+      success = true;
+    }
+
   function acceptGame() public 
     notOwner 
     enoughEtherToAcceptGame
@@ -175,10 +181,30 @@ function updateNextMove() private returns (bool) {
       LogGameOverWithNoWinnerAndPayback("Draw game", amountToPayForEachPlayer);
     }
   }
+  
+  function reset() public onlyOwner returns(bool) {
+    movesPlaced = 0;
+    delete(field);
+
+    gameState = GameState.waitingTheOpponent;
+    winner = Winner.pending;
+
+    guestPlayer = 0x0;
+    nextMoveAddr = 0x0;
+  }
+
+  function userQuitted(address _addr) public returns(bool) {
+      require(_addr != 0x0);
+      
+      Winner playerToPay = (_addr == ownerPlayer) ? Winner.guest : Winner.owner;
+      sendPrizeToWinner(playerToPay);
+  }
 
   function kill() public 
     onlyOwner {
-      selfdestruct(ownerPlayer);
+    	if(gameState != GameState.playing) {
+     	     selfdestruct(ownerPlayer);
+    	}
     }
 
 //***************  find winner methods  ***************/
